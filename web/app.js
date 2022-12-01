@@ -7,7 +7,7 @@ let getWeather=()=>{
   let temperature = document.querySelector("#temperature")
   let humidity = document.querySelector("#humidity")
   let minMaxTemperature = document.querySelector("#minMaxTemperature")
-  axios.get("https://busy-pink-bullfrog-shoe.cyclic.app//weather")
+  axios.get("https://busy-pink-bullfrog-shoe.cyclic.app/weather")
   .then((response)=>{
     console.log("response:??>>>>", response.data)
     cityName.innerHTML = response.data.cityName;
