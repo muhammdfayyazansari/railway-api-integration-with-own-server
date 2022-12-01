@@ -1,4 +1,11 @@
 // console.log("fayyaz")
+let url = window.location.href;
+let baseURL;
+if(url.split("/")[0] === "http:"){
+  baseURL = "http://localhost:5001"
+}else{
+  baseURL = "https://busy-pink-bullfrog-shoe.cyclic.app"
+}
 
 
 
@@ -7,7 +14,8 @@ let getWeather=()=>{
   let temperature = document.querySelector("#temperature")
   let humidity = document.querySelector("#humidity")
   let minMaxTemperature = document.querySelector("#minMaxTemperature")
-  axios.get("https://busy-pink-bullfrog-shoe.cyclic.app/weather")
+
+  axios.get(`${baseURL}/weather`)
   .then((response)=>{
     console.log("response:??>>>>", response.data)
     cityName.innerHTML = response.data.cityName;
